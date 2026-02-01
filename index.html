@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Quicksand", "sans-serif"],
+            },
+            colors: {
+              pastel: {
+                cream: "#FDFAF6",
+                pink: "#FFC8DD",
+                blue: "#BDE0FE",
+                lavender: "#E2C6FF",
+                text: "#4A4A4A",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Quicksand", sans-serif;
+      }
+      .blob {
+        position: absolute;
+        filter: blur(40px);
+        z-index: -1;
+        opacity: 0.7;
+        animation: float 10s infinite ease-in-out alternate;
+      }
+      @keyframes float {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        100% {
+          transform: translate(20px, 40px) rotate(10deg);
+        }
+      }
+    </style>
+    <title>Random Quote Generator</title>
+  </head>
+  <body
+    class="bg-pastel-cream text-pastel-text min-h-screen flex items-center justify-center overflow-hidden relative selection:bg-pastel-pink selection:text-white"
+  >
+    <!-- Decorative Background Blobs -->
+    <div
+      class="blob w-32 h-32 sm:w-48 sm:h-48 md:w-72 md:h-72 bg-pastel-pink rounded-full top-5 left-5 sm:top-10 sm:left-10 opacity-60"
+    ></div>
+    <div
+      class="blob w-40 h-40 sm:w-60 sm:h-60 md:w-96 md:h-96 bg-pastel-blue rounded-full bottom-10 right-5 sm:bottom-20 sm:right-10 opacity-60"
+      style="animation-delay: -2s"
+    ></div>
+    <div
+      class="blob w-28 h-28 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-pastel-lavender rounded-full top-1/2 left-1/4 sm:left-1/3 opacity-50"
+      style="animation-delay: -5s"
+    ></div>
+
+    <main class="relative z-10 w-full max-w-lg px-4 sm:px-6 mx-auto">
+      <div
+        id="quote-container"
+        class="bg-white/80 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 text-center border border-white/50 transition-all duration-500 hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)]"
+      >
+        <div class="mb-6 sm:mb-8">
+          <svg
+            class="w-8 h-8 sm:w-10 sm:h-10 mx-auto text-pastel-pink mb-3 sm:mb-4 opacity-80"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.01697 21L5.01697 18C5.01697 16.8954 5.9124 16 7.01697 16H10.017C10.5693 16 11.017 15.5523 11.017 15V9C11.017 8.44772 10.5693 8 10.017 8H6.01697C5.46468 8 5.01697 8.44772 5.01697 9V11C5.01697 11.5523 4.56925 12 4.01697 12H3.01697V5H13.017V15C13.017 18.3137 10.3307 21 7.01697 21H5.01697Z"
+            ></path>
+          </svg>
+          <p
+            id="quote"
+            class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed text-gray-700 min-h-[60px] sm:min-h-[80px] flex items-center justify-center px-2"
+          >
+            "Act as if what you do makes a difference. It does."
+          </p>
+        </div>
+
+        <button
+          id="new-quote-btn"
+          class="bg-gradient-to-r from-pastel-pink to-rose-300 text-white font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full shadow-lg shadow-rose-200 transform transition hover:-translate-y-1 hover:shadow-xl active:translate-y-0 active:shadow-md focus:outline-none focus:ring-4 focus:ring-rose-100 w-full sm:w-auto"
+          type="button"
+        >
+          New Quote
+        </button>
+      </div>
+
+      <footer
+        class="mt-6 sm:mt-8 text-center text-xs sm:text-sm text-gray-400 font-medium opacity-60"
+      >
+        <p>Stay inspired ✨</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
