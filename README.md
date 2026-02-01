@@ -89,10 +89,4 @@ This project uses the [Advice Slip API](https://api.adviceslip.com/):
 - Proper focus states for keyboard navigation
 - Readable font sizes and contrast ratios
 
-## Acknowledgments
-
-- Quotes provided by [Advice Slip API](https://adviceslip.com/)
-- Font: [Quicksand](https://fonts.google.com/specimen/Quicksand) by Google Fonts
-- Styling: [Tailwind CSS](https://tailwindcss.com/)
-
 ---
